@@ -1,7 +1,5 @@
 class PostsController < ApplicationController
     
-
-   
     def new
         @post = Post.new
         @place = Place.find_by({"id" => params["place_id"]})

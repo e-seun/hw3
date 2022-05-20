@@ -1,18 +1,15 @@
-<h1> 
-<%= @place["name"] %>
-</h1>
+<h1><%= @place["name"] %></h1>
 
-<ul>
-  <% for post in @posts %>
-    <li><%= post["title"] %></li>
-  <% end %>
-</ul>
-
+<% for post in @posts %>
 <p>
-<a href= "/posts/new"> New Post </a>
+  <h3><%= post["title"] %></h3>
+  <ul><%= post["posted_on"] %></ul>
+  <ul><%= post["description"] %></ul>
 </p>
+<% end %>
 
-<p>
-<a href= "/places"> Back to all places </a>
-</p>
+<p> </p>
+<p><a href= "/posts/new?place_id=<%= @place["id"] %>"> New Post </a></p>
+
+<p><a href= "/places"> Back to all places </a></p>
 
